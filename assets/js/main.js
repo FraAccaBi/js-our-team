@@ -50,11 +50,11 @@ for (let index = 0; index < team.length; index++) {
     const addetto = team[index];
     //creo un div  
     const addettoElement = document.createElement('div')
-    //associo al div sopra il contenuto di addetto
-    addettoElement.innerHTML = addetto.name + ' | '
-    addettoElement.innerHTML += addetto.role + ' | '
-    addettoElement.innerHTML += '' + addetto.image
+    
     addImg(addetto.image, addettoElement)
+    //associo al div sopra il contenuto di addetto
+    addettoElement.innerHTML += addetto.name
+    addettoElement.innerHTML += addetto.role
 
     //appendo all'div generico team nel dom l'addettoElement
     teamElement.append(addettoElement)
@@ -68,23 +68,11 @@ for (let index = 0; index < team.length; index++) {
 
 function addImg(objValue,element) {
     let img = document.createElement('img')
+    img.classList.add('block')
     img.src = `./img/${objValue}` 
     console.log(img.src);  
     element.append(img) 
 }
 
-/* var up = document.getElementById('GFG_UP'); 
-        up.innerHTML = "Click on the button to add image element"; 
-        var down = document.getElementById('GFG_DOWN'); 
-          
-        function GFG_Fun() {
-            var img = document.createElement('img');
-            img.src = 
-'https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png';
-            document.getElementById('body').appendChild(img);
-            down.innerHTML = "Image Element Added."; 
-        }
-        
-        
-<img src="./img/angela-caroll-chief-editor.jpg" alt="">
-*/
+
+
