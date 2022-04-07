@@ -50,12 +50,12 @@ for (let index = 0; index < team.length; index++) {
     const addetto = team[index];
     //creo un div  
     const addettoElement = document.createElement('div')
-    
     addImg(addetto.image, addettoElement)
     //associo al div sopra il contenuto di addetto
-    addettoElement.innerHTML += addetto.name
+    addettoElement.innerHTML += addetto.name + '<br>'
     addettoElement.innerHTML += addetto.role
-
+    teamElement.classList.add('flex', 'text-center', 'gap-1')
+    addettoElement.classList.add('bg-cards', 'p-1')
     //appendo all'div generico team nel dom l'addettoElement
     teamElement.append(addettoElement)
     console.log(typeof addetto);
