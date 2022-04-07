@@ -43,8 +43,20 @@ const team = [
     },
   ];
 
+//creo una variabile associata all'elemtno team della dom
+const teamElement = document.querySelector('.team')
+
 for (let index = 0; index < team.length; index++) {
     const addetto = team[index];
+    //creo un div  
+    const addettoElement = document.createElement('div')
+    //associo al div sopra il contenuto di addetto
+    addettoElement.innerHTML = addetto.name + ' | '
+    addettoElement.innerHTML += addetto.role + ' | '
+    addettoElement.innerHTML += addetto.image
+
+    //appendo all'div generico team nel dom l'addettoElement
+    teamElement.append(addettoElement)
     console.log(typeof addetto);
     console.log(addetto.name);
     console.log(addetto.role);
@@ -52,3 +64,6 @@ for (let index = 0; index < team.length; index++) {
     console.log('____________________');
     
 }
+
+
+
